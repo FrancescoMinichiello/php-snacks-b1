@@ -237,11 +237,17 @@ $classi = [
         ],
     ],
 ];
+
 ?>
 
 <!--
 Snack 4A:
 Stampare in pagina, senza particolare stilizzazione il nome di ogni classe e sotto ognuna, i dati di ogni studente/studentessa presente nella relativa classe.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Snack 4B:
+Filtrare il nostro array e mostrare, sempre suddivisi per classe, esclusivamente gli studenti e le studentesse con voto medio sufficiente.
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -263,6 +269,7 @@ Stampare in pagina, senza particolare stilizzazione il nome di ogni classe e sot
                         <li>
                             <h1><?= $singolaClasse ?></h1>
                             <?php foreach ($valoreAlunni as $alunni => $informazioniAlunni) { ?>
+                            <?php if ($informazioniAlunni["voto_medio"] >= 6) { ?>
                             <p>
                                 Id: <?= $informazioniAlunni["id"] ?>
                             </p>
@@ -287,6 +294,7 @@ Stampare in pagina, senza particolare stilizzazione il nome di ogni classe e sot
                             <hr>
                             <?php } ?>
                         </li>
+                        <?php } ?>
                         <?php } ?>
                     </ul>
                 </div>
