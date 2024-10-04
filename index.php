@@ -285,9 +285,6 @@ Aggiungiamo un input che consenta l’inserimento del linguaggio di programmazio
                             <label class="text-white fw-semibold" for="votoMedio">Filtra per voto
                                 medio</label>
                             <select multiple class="form-control" id="votoMedio" name="votoMedio">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
                                 <option>4</option>
                                 <option>5</option>
                                 <option>6</option>
@@ -325,9 +322,7 @@ Aggiungiamo un input che consenta l’inserimento del linguaggio di programmazio
                         <li class="p-5 fw-semibold">
                             <h1 class="mb-5 bg-white p-3 rounded-3 text-center"><?= $singolaClasse ?></h1>
                             <?php foreach ($valoreAlunni as $informazioniAlunni) {
-                                    if (($alunniFiltratiInBaseAlVoto === null && $linguaggioPreferito === null) ||
-                                        ($informazioniAlunni['voto_medio'] < $alunniFiltratiInBaseAlVoto && $informazioniAlunni["linguaggio_preferito"] === $linguaggioPreferito)
-                                    ) { ?>
+                                    if (($alunniFiltratiInBaseAlVoto === null && $linguaggioPreferito === null) || ($informazioniAlunni['voto_medio'] < $alunniFiltratiInBaseAlVoto && $informazioniAlunni["linguaggio_preferito"] === $linguaggioPreferito)) { ?>
                             <!--Condizione se gli alunni hanno un voto almeno sufficiente al 6-->
                             <?php # if ($informazioniAlunni["voto_medio"]>= 6) { 
                                         ?>
@@ -350,9 +345,8 @@ Aggiungiamo un input che consenta l’inserimento del linguaggio di programmazio
                             <p>
                                 Linguaggio preferito: <?= $informazioniAlunni["linguaggio_preferito"] ?>
                             </p>
-                            <p>
-                                Immagine: <?= $informazioniAlunni["immagine"] ?>
-                            </p>
+                            <img src="<?= $informazioniAlunni["immagine"] ?>" class="img-fluid"
+                                alt="<?= $informazioniAlunni["nome"] ?>">
                             <hr>
                             <?php } ?>
                             <?php } ?>
