@@ -238,6 +238,8 @@ $classi = [
     ],
 ];
 
+$alunniFiltratiInBaseAlVoto = isset($_GET['votoMedio']) ? $_GET['votoMedio'] : null;
+
 ?>
 
 <!--
@@ -271,11 +273,11 @@ inferiore al voto inserito.
 <body>
     <div>
         <div class="container">
-            <div class="row mt-3 bg-primary py-3 rounded-4">
+            <div class="row mt-3 bg-primary py-4 rounded-4">
                 <div class="col-10 ">
                     <form action="index.php" method="GET">
                         <div class="form-group">
-                            <label class="text-white pb-4 fw-semibold" for="votoMedio">Filtra per voto
+                            <label class="text-white fw-semibold" for="votoMedio">Filtra per voto
                                 medio</label>
                             <select multiple class="form-control" id="votoMedio" name="votoMedio">
                                 <option>1</option>
@@ -303,12 +305,14 @@ inferiore al voto inserito.
                     <ul class="d-flex flex-wrap d-flex justify-content-center">
                         <?php foreach ($classi as $singolaClasse => $valoreAlunni) { ?>
 
-                        <li class="p-5">
-                            <h1><?= $singolaClasse ?></h1>
-                            <?php foreach ($valoreAlunni as $alunni => $informazioniAlunni) { ?>
+                        <li class="p-5 fw-semibold">
+                            <h1 class="mb-5 bg-white p-3 rounded-3 text-center"><?= $singolaClasse ?></h1>
+                            <?php foreach ($valoreAlunni as $informazioniAlunni) {
+                                    if ($alunniFiltratiInBaseAlVoto === null || $informazioniAlunni['voto_medio'] < $alunniFiltratiInBaseAlVoto) { ?>
                             <!--Condizione se gli alunni hanno un voto almeno sufficiente al 6-->
                             <?php # if ($informazioniAlunni["voto_medio"]>= 6) { 
-                                    ?>
+                                        ?>
+
                             <p>
                                 Id: <?= $informazioniAlunni["id"] ?>
                             </p>
@@ -331,6 +335,7 @@ inferiore al voto inserito.
                                 Immagine: <?= $informazioniAlunni["immagine"] ?>
                             </p>
                             <hr>
+                            <?php } ?>
                             <?php } ?>
                         </li>
                         <?php } ?>
