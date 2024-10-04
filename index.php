@@ -6,7 +6,9 @@
 
 <?php
 
-$name = $GET("name")
+$name = $_GET["name"];
+$email = $_GET["email"];
+$age = $_GET["age"];
 
 ?>
 
@@ -27,6 +29,9 @@ $name = $GET("name")
         <input type="number" name="age">
         <button>invia</button>
     </form>
+    <p><?= $name ?></p>
+    <p><?= $email ?></p>
+    <p><?= $age ?></p>
 </body>
 
 </html>
