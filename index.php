@@ -1,17 +1,32 @@
-<!-- 
-    Con un form passare come parametri GET name, mail e age e verificare (cercando i metodi che non conosciamo nella
-    documentazione) che name sia più lungo di 3 caratteri, che mail contenga un punto e una chiocciola e che age sia un
-    numero. Se tutto è ok stampare "Accesso riuscito", altrimenti "Accesso negato"
--->
+<!--Stampiamo il nostro array mettendo gli insegnanti in un rettangolo grigio e i PM in un rettangolo verde.-->
+
 
 <?php
 
-$name = $_GET["name"];
-$email = $_GET["email"];
-$age = $_GET["age"];
+$db = [
+    'teachers' => [
+        [
+            'name' => 'Michele',
+            'lastname' => 'Papagni'
+        ],
+        [
+            'name' => 'Fabio',
+            'lastname' => 'Forghieri'
+        ]
+    ],
+    'pm' => [
+        [
+            'name' => 'Roberto',
+            'lastname' => 'Marazzini'
+        ],
+        [
+            'name' => 'Federico',
+            'lastname' => 'Pellegrini'
+        ]
+    ]
+];
 
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,15 +38,14 @@ $age = $_GET["age"];
 </head>
 
 <body>
-    <form action="index.php" method="GET">
-        <input type="text" name="name">
-        <input type="email" name="email">
-        <input type="number" name="age">
-        <button>invia</button>
-    </form>
-    <p><?= $name ?></p>
-    <p><?= $email ?></p>
-    <p><?= $age ?></p>
+    <div class="insegnanti">
+        <ul>
+            <?php ?>
+            <li>
+
+            </li>
+        </ul>
+    </div>
 </body>
 
 </html>
