@@ -248,6 +248,13 @@ Stampare in pagina, senza particolare stilizzazione il nome di ogni classe e sot
 
 Snack 4B:
 Filtrare il nostro array e mostrare, sempre suddivisi per classe, esclusivamente gli studenti e le studentesse con voto medio sufficiente.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Snack 4C:
+Commentiamo il filtro del punto 4B (lasciatelo nel codice, in modo che possiamo comunque vederlo) e aggiungiamo un minimo di stile a piacere. 
+Inseriamo quindi un form in cui l’utente possa inserire un input con il voto medio massimo, e filtriamo in base ad esso solo gli studenti che abbiano una media esclusivamente 
+inferiore al voto inserito.
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -256,20 +263,52 @@ Filtrare il nostro array e mostrare, sempre suddivisi per classe, esclusivamente
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div>
         <div class="container">
+            <div class="row mt-3 bg-primary py-3 rounded-4">
+                <div class="col-10 ">
+                    <form action="index.php" method="GET">
+                        <div class="form-group">
+                            <label class="text-white pb-4 fw-semibold" for="votoMedio">Filtra per voto
+                                medio</label>
+                            <select multiple class="form-control" id="votoMedio" name="votoMedio">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                            </select>
+                        </div>
+                </div>
+                <div class="col-2 d-flex align-items-center justify-content-center">
+                    <button class="btn btn-lg btn-secondary">
+                        cerca
+                    </button>
+                </div>
+                </form>
+            </div>
             <div class="row">
                 <div class="col">
-                    <ul>
+                    <ul class="d-flex flex-wrap d-flex justify-content-center">
                         <?php foreach ($classi as $singolaClasse => $valoreAlunni) { ?>
 
-                        <li>
+                        <li class="p-5">
                             <h1><?= $singolaClasse ?></h1>
                             <?php foreach ($valoreAlunni as $alunni => $informazioniAlunni) { ?>
-                            <?php if ($informazioniAlunni["voto_medio"] >= 6) { ?>
+                            <!--Condizione se gli alunni hanno un voto almeno sufficiente al 6-->
+                            <?php # if ($informazioniAlunni["voto_medio"]>= 6) { 
+                                    ?>
                             <p>
                                 Id: <?= $informazioniAlunni["id"] ?>
                             </p>
@@ -295,7 +334,8 @@ Filtrare il nostro array e mostrare, sempre suddivisi per classe, esclusivamente
                             <?php } ?>
                         </li>
                         <?php } ?>
-                        <?php } ?>
+                        <?php #}
+                        ?>
                     </ul>
                 </div>
             </div>
