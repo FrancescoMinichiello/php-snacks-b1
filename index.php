@@ -239,7 +239,7 @@ $classi = [
 ];
 
 $alunniFiltratiInBaseAlVoto = isset($_GET['votoMedio']) ? $_GET['votoMedio'] : null;
-
+$linguaggioPreferito = isset($_GET['linguaggioPreferito']) ? $_GET['linguaggioPreferito'] : null;
 ?>
 
 <!--
@@ -257,6 +257,11 @@ Snack 4C:
 Commentiamo il filtro del punto 4B (lasciatelo nel codice, in modo che possiamo comunque vederlo) e aggiungiamo un minimo di stile a piacere. 
 Inseriamo quindi un form in cui l’utente possa inserire un input con il voto medio massimo, e filtriamo in base ad esso solo gli studenti che abbiano una media esclusivamente 
 inferiore al voto inserito.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Snack 4D:
+Aggiungiamo un input che consenta l’inserimento del linguaggio di programmazione preferito, e filtriamo in base ad esso solo gli studenti che abbiano quel linguaggio come preferito.
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -274,7 +279,7 @@ inferiore al voto inserito.
     <div>
         <div class="container">
             <div class="row mt-3 bg-primary py-4 rounded-4">
-                <div class="col-10 ">
+                <div class="col-5 ">
                     <form action="index.php" method="GET">
                         <div class="form-group">
                             <label class="text-white fw-semibold" for="votoMedio">Filtra per voto
@@ -293,6 +298,18 @@ inferiore al voto inserito.
                             </select>
                         </div>
                 </div>
+                <div class="col-5 ">
+                    <div class="form-group">
+                        <label class="text-white fw-semibold" for="linguaggioPreferito">Filtra per linguaggio di
+                            programmazione preferito</label>
+                        <select multiple class="form-control" id="linguaggioPreferito" name="linguaggioPreferito">
+                            <option>PHP</option>
+                            <option>CSS</option>
+                            <option>JS</option>
+                            <option>HTML</option>
+                        </select>
+                    </div>
+                </div>
                 <div class="col-2 d-flex align-items-center justify-content-center">
                     <button class="btn btn-lg btn-secondary">
                         cerca
@@ -308,7 +325,9 @@ inferiore al voto inserito.
                         <li class="p-5 fw-semibold">
                             <h1 class="mb-5 bg-white p-3 rounded-3 text-center"><?= $singolaClasse ?></h1>
                             <?php foreach ($valoreAlunni as $informazioniAlunni) {
-                                    if ($alunniFiltratiInBaseAlVoto === null || $informazioniAlunni['voto_medio'] < $alunniFiltratiInBaseAlVoto) { ?>
+                                    if (($alunniFiltratiInBaseAlVoto === null && $linguaggioPreferito === null) ||
+                                        ($informazioniAlunni['voto_medio'] < $alunniFiltratiInBaseAlVoto && $informazioniAlunni["linguaggio_preferito"] === $linguaggioPreferito)
+                                    ) { ?>
                             <!--Condizione se gli alunni hanno un voto almeno sufficiente al 6-->
                             <?php # if ($informazioniAlunni["voto_medio"]>= 6) { 
                                         ?>
