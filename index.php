@@ -1,33 +1,248 @@
-<!--Stampiamo il nostro array mettendo gli insegnanti in un rettangolo grigio e i PM in un rettangolo verde.-->
-
-
 <?php
-
-$db = [
-    'teachers' => [
+$classi = [
+    "Classe 1A" => [
         [
-            'name' => 'Michele',
-            'lastname' => 'Papagni'
+            "id" => 1,
+            "nome" => "Marco",
+            "cognome" => "Rossi",
+
+            "anni" => 23,
+            "voto_medio" => 8.5,
+            "linguaggio_preferito" => "PHP",
+            "immagine" => "https://source.unsplash.com/random/200x200?person",
         ],
         [
-            'name' => 'Fabio',
-            'lastname' => 'Forghieri'
-        ]
+            "id" => 2,
+            "nome" => "Luca",
+            "cognome" => "Verdi",
+            "anni" => 27,
+            "voto_medio" => 3.5,
+            "linguaggio_preferito" => "JS",
+            "immagine" => "https://source.unsplash.com/random/200x200?person",
+        ],
+        [
+            "id" => 3,
+            "nome" => "Giulia",
+            "cognome" => "Bianchi",
+            "anni" => 23,
+            "voto_medio" => 5.5,
+            "linguaggio_preferito" => "CSS",
+            "immagine" => "https://source.unsplash.com/random/200x200?person",
+        ],
+        [
+            "id" => 4,
+            "nome" => "Sofia",
+            "cognome" => "Russo",
+            "anni" => 27,
+            "voto_medio" => 8.0,
+            "linguaggio_preferito" => "HTML",
+            "immagine" => "https://source.unsplash.com/random/200x200?person",
+        ],
+        [
+            "id" => 5,
+            "nome" => "Andrea",
+            "cognome" => "Ferrari",
+            "anni" => 22,
+            "voto_medio" => 7.5,
+            "linguaggio_preferito" => "PHP",
+            "immagine" => "https://source.unsplash.com/random/200x200?person",
+        ],
     ],
-    'pm' => [
+    "Classe 2A" => [
         [
-            'name' => 'Roberto',
-            'lastname' => 'Marazzini'
+            "id" => 27,
+            "nome" => "Francesca",
+            "cognome" => "Ricci",
+            "anni" => 27,
+            "voto_medio" => 9.0,
+            "linguaggio_preferito" => "JS",
+            "immagine" => "https://source.unsplash.com/random/200x200?person",
         ],
         [
-            'name' => 'Federico',
-            'lastname' => 'Pellegrini'
-        ]
-    ]
+            "id" => 22,
+            "nome" => "Matteo",
+            "cognome" => "Moretti",
+            "anni" => 23,
+            "voto_medio" => 4.3,
+            "linguaggio_preferito" => "HTML",
+            "immagine" => "https://source.unsplash.com/random/200x200?person",
+        ],
+        [
+            "id" => 30,
+            "nome" => "Alessandro",
+            "cognome" => "Lombardi",
+            "anni" => 27,
+            "voto_medio" => 5.4,
+            "linguaggio_preferito" => "CSS",
+            "immagine" => "https://source.unsplash.com/random/200x200?person",
+        ],
+        [
+            "id" => 33,
+            "nome" => "Elena",
+            "cognome" => "Conti",
+            "anni" => 22,
+            "voto_medio" => 8.4,
+            "linguaggio_preferito" => "PHP",
+            "immagine" => "https://source.unsplash.com/random/200x200?person",
+        ],
+        [
+            "id" => 20,
+            "nome" => "Valeria",
+            "cognome" => "Gallo",
+            "anni" => 27,
+            "voto_medio" => 9.5,
+            "linguaggio_preferito" => "JS",
+            "immagine" => "https://source.unsplash.com/random/200x200?person",
+        ],
+    ],
+    "Classe 3A" => [
+        [
+            "id" => 31,
+            "nome" => "Simone",
+            "cognome" => "Fabbri",
+            "anni" => 22,
+            "voto_medio" => 6.9,
+            "linguaggio_preferito" => "CSS",
+            "immagine" => "https://source.unsplash.com/random/200x200?person",
+        ],
+        [
+            "id" => 32,
+            "nome" => "Chiara",
+            "cognome" => "Riva",
+            "anni" => 27,
+            "voto_medio" => 5.3,
+            "linguaggio_preferito" => "HTML",
+            "immagine" => "https://source.unsplash.com/random/200x200?person",
+        ],
+        [
+            "id" => 33,
+            "nome" => "Lorenzo",
+            "cognome" => "Orlando",
+            "anni" => 22,
+            "voto_medio" => 8.2,
+            "linguaggio_preferito" => "PHP",
+            "immagine" => "https://source.unsplash.com/random/200x200?person",
+        ],
+        [
+            "id" => 34,
+            "nome" => "Marta",
+            "cognome" => "Martini",
+            "anni" => 22,
+            "voto_medio" => 4.8,
+            "linguaggio_preferito" => "JS",
+            "immagine" => "https://source.unsplash.com/random/200x200?person",
+        ],
+        [
+            "id" => 35,
+            "nome" => "Giovanni",
+            "cognome" => "Giuliani",
+            "anni" => 27,
+            "voto_medio" => 8.1,
+            "linguaggio_preferito" => "CSS",
+            "immagine" => "https://source.unsplash.com/random/200x200?person",
+        ],
+    ],
+    "Classe 4A" => [
+        [
+            "id" => 46,
+            "nome" => "Silvia",
+            "cognome" => "De Luca",
+            "anni" => 30,
+            "voto_medio" => 4.2,
+            "linguaggio_preferito" => "PHP",
+            "immagine" => "https://source.unsplash.com/random/200x200?person",
+        ],
+        [
+            "id" => 47,
+            "nome" => "Federico",
+            "cognome" => "Costa",
+            "anni" => 30,
+            "voto_medio" => 5.1,
+            "linguaggio_preferito" => "HTML",
+            "immagine" => "https://source.unsplash.com/random/200x200?person",
+        ],
+        [
+            "id" => 48,
+            "nome" => "Michele",
+            "cognome" => "Cattaneo",
+            "anni" => 22,
+            "voto_medio" => 3.7,
+            "linguaggio_preferito" => "JS",
+            "immagine" => "https://source.unsplash.com/random/200x200?person",
+        ],
+        [
+            "id" => 49,
+            "nome" => "Anna",
+            "cognome" => "Serra",
+            "anni" => 30,
+            "voto_medio" => 8.6,
+            "linguaggio_preferito" => "CSS",
+            "immagine" => "https://source.unsplash.com/random/200x200?person",
+        ],
+        [
+            "id" => 50,
+            "nome" => "Antonio",
+            "cognome" => "Cervi",
+            "anni" => 30,
+            "voto_medio" => 4.0,
+            "linguaggio_preferito" => "PHP",
+            "immagine" => "https://source.unsplash.com/random/200x200?person",
+        ],
+    ],
+    "Classe 5A" => [
+        [
+            "id" => 61,
+            "nome" => "Davide",
+            "cognome" => "Ferrero",
+            "anni" => 33,
+            "voto_medio" => 8.7,
+            "linguaggio_preferito" => "JS",
+            "immagine" => "https://source.unsplash.com/random/200x200?person",
+        ],
+        [
+            "id" => 62,
+            "nome" => "Sara",
+            "cognome" => "Leoni",
+            "anni" => 33,
+            "voto_medio" => 4.1,
+            "linguaggio_preferito" => "PHP",
+            "immagine" => "https://source.unsplash.com/random/200x200?person",
+        ],
+        [
+            "id" => 63,
+            "nome" => "Daniele",
+            "cognome" => "Bertoni",
+            "anni" => 33,
+            "voto_medio" => 4.4,
+            "linguaggio_preferito" => "HTML",
+            "immagine" => "https://source.unsplash.com/random/200x200?person",
+        ],
+        [
+            "id" => 64,
+            "nome" => "Giada",
+            "cognome" => "Ragusa",
+            "anni" => 30,
+            "voto_medio" => 5.0,
+            "linguaggio_preferito" => "CSS",
+            "immagine" => "https://source.unsplash.com/random/200x200?person",
+        ],
+        [
+            "id" => 65,
+            "nome" => "Claudio",
+            "cognome" => "Lanza",
+            "anni" => 30,
+            "voto_medio" => 6.7,
+            "linguaggio_preferito" => "PHP",
+            "immagine" => "https://source.unsplash.com/random/200x200?person",
+        ],
+    ],
 ];
-
 ?>
 
+<!--
+Snack 4A:
+Stampare in pagina, senza particolare stilizzazione il nome di ogni classe e sotto ognuna, i dati di ogni studente/studentessa presente nella relativa classe.
+-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,13 +253,45 @@ $db = [
 </head>
 
 <body>
-    <div class="insegnanti">
-        <ul>
-            <?php ?>
-            <li>
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <ul>
+                        <?php foreach ($classi as $singolaClasse => $valoreAlunni) { ?>
 
-            </li>
-        </ul>
+                        <li>
+                            <h1><?= $singolaClasse ?></h1>
+                            <?php foreach ($valoreAlunni as $alunni => $informazioniAlunni) { ?>
+                            <p>
+                                Id: <?= $informazioniAlunni["id"] ?>
+                            </p>
+                            <p>
+                                Nome: <?= $informazioniAlunni["nome"] ?>
+                            </p>
+                            <p>
+                                Cognome: <?= $informazioniAlunni["cognome"] ?>
+                            </p>
+                            <p>
+                                Anni: <?= $informazioniAlunni["anni"] ?>
+                            </p>
+                            <p>
+                                Voto medio: <?= $informazioniAlunni["voto_medio"] ?>
+                            </p>
+                            <p>
+                                Linguaggio preferito: <?= $informazioniAlunni["linguaggio_preferito"] ?>
+                            </p>
+                            <p>
+                                Immagine: <?= $informazioniAlunni["immagine"] ?>
+                            </p>
+                            <hr>
+                            <?php } ?>
+                        </li>
+                        <?php } ?>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 
